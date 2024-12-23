@@ -17,11 +17,6 @@ variable "project" {
   type        = string
 }
 
-variable "region" {
-  description = "The region in which the resource belongs"
-  type        = string
-}
-
 variable "source_subnetwork_ip_ranges_to_nat" {
   description = "How NAT should be configured per Subnetwork.  Possible values are ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, and LIST_OF_SUBNETWORKS"
   type        = string

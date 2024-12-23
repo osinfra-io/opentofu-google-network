@@ -72,7 +72,13 @@ terraform test
 
 | Name | Version |
 |------|---------|
-| google | 6.2.0 |
+| google | 6.14.1 |
+
+### Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| helpers | github.com/osinfra-io/terraform-core-helpers//child | v0.1.2 |
 
 ### Resources
 

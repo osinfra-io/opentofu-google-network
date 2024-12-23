@@ -18,7 +18,6 @@ module "test" {
 
   private_ip_google_access = true
   project                  = var.project
-  region                   = "mock-region"
 
   # Secondary ranges are used to allocate IP addresses to resources in a subnetwork. In this example we create Pod IP address ranges
   # and Service (ClusterIP) address ranges for a VPC-native cluster.
