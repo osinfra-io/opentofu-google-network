@@ -33,11 +33,6 @@ variable "purpose" {
   default     = null
 }
 
-variable "region" {
-  description = "The region in which the resource belongs"
-  type        = string
-}
-
 variable "role" {
   description = "The role of subnetwork. The value can be set to `ACTIVE` or `BACKUP`"
   type        = string

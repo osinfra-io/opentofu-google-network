@@ -12,7 +12,7 @@ resource "google_compute_subnetwork" "this" {
   private_ip_google_access = var.private_ip_google_access
   project                  = var.project
   purpose                  = var.purpose
-  region                   = var.region
+  region                   = module.helpers.region
   role                     = var.role
 
   dynamic "secondary_ip_range" {
