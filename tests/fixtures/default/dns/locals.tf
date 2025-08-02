@@ -1,12 +1,8 @@
 # Local Values
-# https://www.terraform.io/docs/language/values/locals.html
+# https://opentofu.org/docs/language/values/locals
 
 locals {
   labels = {
-    cost-center = "mock-x001"
-    env         = var.environment
-    repository  = "mock-repository"
-    platform    = "mock-platform"
-    team        = "mock-team"
+    "mock-key" = "mock-value"
   }
 }

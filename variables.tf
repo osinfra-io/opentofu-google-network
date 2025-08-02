@@ -1,5 +1,5 @@
 # Input Variables
-# https://www.terraform.io/language/values/variables
+# https://opentofu.org/docs/language/values/variables
 
 variable "name" {
   description = "Name of the network to create"

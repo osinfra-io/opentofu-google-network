@@ -1,5 +1,8 @@
+# Input Variables
+# https://opentofu.org/docs/language/values/variables
+
 variable "description" {
-  description = "A textual description field. Defaults to 'Managed by Terraform'"
+  description = "A textual description field. Defaults to 'Managed by OpenTofu'"
   type        = string
   default     = null
 }

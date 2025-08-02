@@ -1,5 +1,5 @@
 # Firewall Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_firewall
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/compute_firewall
 
 resource "google_compute_firewall" "rules" {
   for_each = merge({ for rule in var.rules : rule.name => rule }, { for rule in local.rules : rule.name => rule })
@@ -40,7 +40,7 @@ resource "google_compute_firewall" "rules" {
 }
 
 # Compute Network Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_network
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/compute_network
 
 resource "google_compute_network" "this" {
   auto_create_subnetworks = "false"
@@ -50,7 +50,7 @@ resource "google_compute_network" "this" {
 }
 
 # Compute Shared VPC Host Project Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_shared_vpc_host_project
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/compute_shared_vpc_host_project
 
 resource "google_compute_shared_vpc_host_project" "this" {
   count = var.shared_vpc ? 1 : 0
@@ -59,7 +59,7 @@ resource "google_compute_shared_vpc_host_project" "this" {
 }
 
 # Compute Shared VPC Service Project Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_shared_vpc_service_project
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/compute_shared_vpc_service_project
 
 resource "google_compute_shared_vpc_service_project" "this" {
   for_each = var.shared_vpc ? { for i in var.shared_vpc_service_projects : i => true } : {}

@@ -1,3 +1,6 @@
+# Output Values
+# https://opentofu.org/docs/language/values/outputs
+
 output "name" {
   description = "The DNS zone name"
   value       = google_dns_managed_zone.this.name

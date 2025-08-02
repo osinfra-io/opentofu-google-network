@@ -1,5 +1,5 @@
 # Input Variables
-# https://www.terraform.io/language/values/variables
+# https://opentofu.org/docs/language/values/variables
 
 variable "ip_cidr_range" {
   description = "The range of internal addresses that are owned by this subnetwork"

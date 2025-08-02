@@ -1,10 +1,7 @@
 # Compute Subnetwork Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/compute_subnetwork
 
 resource "google_compute_subnetwork" "this" {
-
-  # Ensure that Private google access is enabled for IPV6
-  # checkov:skip=CKV_GCP_76: We are not using IPV6
 
   ip_cidr_range            = var.ip_cidr_range
   name                     = var.name
