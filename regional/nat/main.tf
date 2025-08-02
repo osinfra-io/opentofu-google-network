@@ -1,5 +1,5 @@
 # Compute Router Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_router
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/compute_router
 
 resource "google_compute_router" "cloud_nat" {
   name    = local.name
@@ -9,7 +9,7 @@ resource "google_compute_router" "cloud_nat" {
 }
 
 # Compute Router NAT Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_router_nat
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/compute_router_nat
 
 resource "google_compute_router_nat" "this" {
 
