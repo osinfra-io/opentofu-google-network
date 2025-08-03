@@ -4,12 +4,6 @@
 
 [![OpenTofu Tests](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/test.yml/badge.svg)](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/test.yml) [![Dependabot](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/dependabot.yml/badge.svg)](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/dependabot.yml)
 
-**[Infracost](https://www.infracost.io):**
-
-[![infracost](https://img.shields.io/endpoint?url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/12f405c3-d54f-4d40-bc56-f77915992342/branch/033eda30-5251-4ab9-bc73-c1a963174a53)](https://dashboard.infracost.io/org/osinfra-io/repos/12f405c3-d54f-4d40-bc56-f77915992342?tab=settings)
-
-💵 Monthly estimates based on Infracost baseline costs.
-
 ## Repository Description
 
 OpenTofu **example** module for a Google Cloud Platform network.
@@ -30,11 +24,10 @@ Our focus is on the core fundamental practice of platform engineering, Infrastru
 
 To avoid slowing down stream-aligned teams, we want to open up the possibility for contributions. The Open Source Infrastructure (as Code) model allows team members external to the platform team to contribute with only a slight increase in cognitive load. This section is for developers who want to contribute to this repository, describing the tools used, the skills, and the knowledge required, along with OpenTofu documentation.
 
-See the documentation for setting up a local development environment [here](https://docs.osinfra.io/fundamentals/development-setup).
+See the [documentation](https://docs.osinfra.io/fundamentals/development-setup) for setting up a local development environment.
 
 ### 🛠️ Tools
 
-- [infracost](https://github.com/infracost/infracost)
 - [osinfra-pre-commit-hooks](https://github.com/osinfra-io/pre-commit-hooks)
 - [pre-commit](https://github.com/pre-commit/pre-commit)
 
@@ -59,6 +52,15 @@ tofu init
 
 ```none
 tofu test
+```
+
+### 📦 Release
+
+To release a new version, simply push a new tag to the repository. The tag should be in the format `vX.Y.Z` where `X`, `Y`, and `Z` are integers.
+
+```none
+git tag vX.Y.Z
+git push origin vX.Y.Z
 ```
 
 ## 📓 OpenTofu Documentation
