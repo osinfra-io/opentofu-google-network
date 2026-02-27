@@ -2,7 +2,6 @@
 # https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/dns_managed_zone
 
 resource "google_dns_managed_zone" "this" {
-
   description = var.description
   dns_name    = var.dns_name
   labels      = var.labels

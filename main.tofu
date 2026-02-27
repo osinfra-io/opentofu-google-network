@@ -53,7 +53,9 @@ resource "google_compute_network" "this" {
 # https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/compute_shared_vpc_host_project
 
 resource "google_compute_shared_vpc_host_project" "this" {
-  count = var.shared_vpc ? 1 : 0
+  lifecycle {
+    enabled = var.shared_vpc
+  }
 
   project = var.project
 }
@@ -64,6 +66,6 @@ resource "google_compute_shared_vpc_host_project" "this" {
 resource "google_compute_shared_vpc_service_project" "this" {
   for_each = var.shared_vpc ? { for i in var.shared_vpc_service_projects : i => true } : {}
 
-  host_project    = google_compute_shared_vpc_host_project.this[0].id
+  host_project    = google_compute_shared_vpc_host_project.this.id
   service_project = each.key
 }

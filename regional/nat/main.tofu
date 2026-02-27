@@ -12,7 +12,6 @@ resource "google_compute_router" "cloud_nat" {
 # https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/compute_router_nat
 
 resource "google_compute_router_nat" "this" {
-
   log_config {
     enable = true
     filter = "ERRORS_ONLY"

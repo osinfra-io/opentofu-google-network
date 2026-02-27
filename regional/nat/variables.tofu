@@ -21,6 +21,11 @@ variable "source_subnetwork_ip_ranges_to_nat" {
   description = "How NAT should be configured per Subnetwork.  Possible values are ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, and LIST_OF_SUBNETWORKS"
   type        = string
   default     = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+
+  validation {
+    condition     = contains(["ALL_SUBNETWORKS_ALL_IP_RANGES", "ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES", "LIST_OF_SUBNETWORKS"], var.source_subnetwork_ip_ranges_to_nat)
+    error_message = "The source_subnetwork_ip_ranges_to_nat must be one of: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, LIST_OF_SUBNETWORKS"
+  }
 }
 
 variable "subnetwork_names" {

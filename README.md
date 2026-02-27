@@ -1,12 +1,10 @@
 # <img align="left" width="45" height="45" src="https://github.com/user-attachments/assets/b1a10251-0c34-41c9-ac8c-edd79dbfaf07"> Google Cloud Platform - Network Module
 
-**[GitHub Actions](https://github.com/osinfra-io/opentofu-google-network/actions):**
-
-[![OpenTofu Tests](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/test.yml/badge.svg)](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/test.yml) [![Dependabot](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/dependabot.yml/badge.svg)](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/dependabot.yml)
+[![OpenTofu Tests](https://img.shields.io/github/actions/workflow/status/osinfra-io/opentofu-google-network/test.yml?style=for-the-badge&logo=opentofu&color=FEDA15&label=OpenTofu%20Tests)](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/test.yml) [![Dependabot](https://img.shields.io/github/actions/workflow/status/osinfra-io/opentofu-google-network/dependabot.yml?style=for-the-badge&logo=github&color=2088FF&label=Dependabot)](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/dependabot.yml)
 
 ## Repository Description
 
-OpenTofu **example** module for a Google Cloud Platform network.
+OpenTofu **example** module that creates a Shared VPC host project network with configurable firewall rules, including CIS benchmark and Identity-Aware Proxy (IAP) rules. Regional subnetworks are provisioned with secondary IP ranges, VPC flow logging, and optional Cloud NAT for outbound internet access. Cloud DNS managed zones are supported for both public (with DNSSEC) and private visibility configurations.
 
 > [!NOTE]
 > We do not recommend consuming this module like you might a [public module](https://search.opentofu.org). It is a baseline, something you can fork, potentially maintain, and modify to fit your organization's needs. Using public modules vs. writing your own has various [drivers and trade-offs](https://docs.osinfra.io/fundamentals/architecture-decision-records/adr-0003) that your organization should evaluate.
@@ -15,6 +13,11 @@ OpenTofu **example** module for a Google Cloud Platform network.
 
 > [!TIP]
 > You can check the [tests/fixtures](tests/fixtures) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples on which to base your configurations.
+
+Google project services must be enabled before using this module. As a best practice, these should be defined in the [opentofu-google-project](https://github.com/osinfra-io/opentofu-google-project) module. The following services are required:
+
+- `compute.googleapis.com`
+- `dns.googleapis.com`
 
 ## <img align="left" width="35" height="35" src="https://github.com/osinfra-io/github-organization-management/assets/1610100/39d6ae3b-ccc2-42db-92f1-276a5bc54e65"> Development
 

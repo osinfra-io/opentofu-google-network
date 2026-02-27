@@ -31,12 +31,22 @@ variable "purpose" {
   description = "The purpose of the resource. This field can be either `PRIVATE_RFC_1918`, `INTERNAL_HTTPS_LOAD_BALANCER` or `REGIONAL_MANAGED_PROXY`"
   type        = string
   default     = null
+
+  validation {
+    condition     = var.purpose == null || contains(["PRIVATE_RFC_1918", "INTERNAL_HTTPS_LOAD_BALANCER", "REGIONAL_MANAGED_PROXY"], var.purpose)
+    error_message = "The purpose must be one of: PRIVATE_RFC_1918, INTERNAL_HTTPS_LOAD_BALANCER, REGIONAL_MANAGED_PROXY"
+  }
 }
 
 variable "role" {
   description = "The role of subnetwork. The value can be set to `ACTIVE` or `BACKUP`"
   type        = string
   default     = null
+
+  validation {
+    condition     = var.role == null || contains(["ACTIVE", "BACKUP"], var.role)
+    error_message = "The role must be one of: ACTIVE, BACKUP"
+  }
 }
 
 variable "secondary_ip_ranges" {

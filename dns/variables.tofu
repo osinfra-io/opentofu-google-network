@@ -37,4 +37,9 @@ variable "project" {
 variable "visibility" {
   description = "The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources"
   type        = string
+
+  validation {
+    condition     = contains(["public", "private"], var.visibility)
+    error_message = "The visibility must be one of: public, private"
+  }
 }
