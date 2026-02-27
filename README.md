@@ -1,8 +1,6 @@
 # <img align="left" width="45" height="45" src="https://github.com/user-attachments/assets/b1a10251-0c34-41c9-ac8c-edd79dbfaf07"> Google Cloud Platform - Network Module
 
-**[GitHub Actions](https://github.com/osinfra-io/opentofu-google-network/actions):**
-
-[![OpenTofu Tests](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/test.yml/badge.svg)](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/test.yml) [![Dependabot](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/dependabot.yml/badge.svg)](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/dependabot.yml)
+[![OpenTofu Tests](https://img.shields.io/github/actions/workflow/status/osinfra-io/opentofu-google-network/test.yml?branch=main&style=for-the-badge&logo=opentofu&label=OpenTofu%20Tests)](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/test.yml) [![Dependabot](https://img.shields.io/github/actions/workflow/status/osinfra-io/opentofu-google-network/dependabot.yml?branch=main&style=for-the-badge&logo=github&label=Dependabot)](https://github.com/osinfra-io/opentofu-google-network/actions/workflows/dependabot.yml)
 
 ## Repository Description
 
@@ -15,6 +13,11 @@ OpenTofu **example** module for a Google Cloud Platform network.
 
 > [!TIP]
 > You can check the [tests/fixtures](tests/fixtures) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples on which to base your configurations.
+
+Google project services must be enabled before using this module. As a best practice, these should be defined in the [opentofu-google-project](https://github.com/osinfra-io/opentofu-google-project) module. The following services are required:
+
+- `compute.googleapis.com`
+- `dns.googleapis.com`
 
 ## <img align="left" width="35" height="35" src="https://github.com/osinfra-io/github-organization-management/assets/1610100/39d6ae3b-ccc2-42db-92f1-276a5bc54e65"> Development
 

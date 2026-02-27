@@ -2,7 +2,6 @@
 # https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/compute_subnetwork
 
 resource "google_compute_subnetwork" "this" {
-
   ip_cidr_range            = var.ip_cidr_range
   name                     = var.name
   network                  = var.network
