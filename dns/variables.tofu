@@ -2,7 +2,7 @@
 # https://opentofu.org/docs/language/values/variables
 
 variable "description" {
-  description = "A textual description field. Defaults to 'Managed by OpenTofu'"
+  description = "A textual description field. Defaults to 'DNS zone for <dns_name>'"
   type        = string
   default     = null
 }
