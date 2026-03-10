@@ -1,9 +1,5 @@
-# DNS Zone Managed Resource
+# DNS Managed Zone Resource
 # https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/dns_managed_zone
-
-locals {
-  description = coalesce(var.description, "DNS zone for ${var.dns_name}")
-}
 
 resource "google_dns_managed_zone" "this" {
   description = local.description
@@ -14,14 +10,14 @@ resource "google_dns_managed_zone" "this" {
   visibility  = var.visibility
 
   dynamic "dnssec_config" {
-    for_each = var.visibility != "public" ? [] : [1]
+    for_each = local.dnssec_config_enabled
     content {
       state = "on"
     }
   }
 
   dynamic "private_visibility_config" {
-    for_each = var.visibility != "private" ? [] : length(var.private_visibility_config_networks) == 0 ? [] : [1]
+    for_each = local.private_visibility_config_enabled
     content {
       dynamic "networks" {
         for_each = var.private_visibility_config_networks

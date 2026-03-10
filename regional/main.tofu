@@ -5,7 +5,7 @@ resource "google_compute_subnetwork" "this" {
   ip_cidr_range = var.ip_cidr_range
 
   dynamic "log_config" {
-    for_each = var.purpose != "INTERNAL_HTTPS_LOAD_BALANCER" ? [0] : []
+    for_each = local.log_config_enabled
     content {
       aggregation_interval = "INTERVAL_5_SEC"
       flow_sampling        = 1
