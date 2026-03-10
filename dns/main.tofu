@@ -1,6 +1,3 @@
-# Resources
-# https://opentofu.org/docs/language/resources
-
 # DNS Managed Zone Resource
 # https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/dns_managed_zone
 
