@@ -57,4 +57,6 @@ locals {
       target_tags         = null
     }
   ]
+
+  shared_vpc_service_projects_map = var.shared_vpc ? { for i in var.shared_vpc_service_projects : i => true } : {}
 }

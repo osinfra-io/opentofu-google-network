@@ -25,7 +25,7 @@ resource "google_compute_router_nat" "this" {
   source_subnetwork_ip_ranges_to_nat = var.source_subnetwork_ip_ranges_to_nat
 
   dynamic "subnetwork" {
-    for_each = var.source_subnetwork_ip_ranges_to_nat == "LIST_OF_SUBNETWORKS" ? toset(var.subnetwork_names) : []
+    for_each = local.nat_subnetworks
 
     content {
       name                    = subnetwork.value
